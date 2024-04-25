@@ -151,3 +151,60 @@ After the final test, judging from the model training performance, when the batc
 ## **Model Deployment**
 
 After obtaining the model file, convert the TensorFlow Lite model in colab, and then deploy the model with the help of the TensorFlow Lite package in flutter. The final application interface consists of an input page and a result page. Users can choose to use album pictures or direct camera shooting for image prediction.After obtaining the model file, convert the TensorFlow Lite model in colab, and then deploy the model with the help of the TensorFlow Lite package in flutter. The final application interface consists of an input page and a result page. Users can choose to use album pictures or direct camera shooting for image prediction.
+
+<div align=center>
+    <img src='./src/pic15.png' width=550>
+</div>
+<br>
+<div align=center>
+    <img src='./src/pic16.png' width=550>
+</div>
+<br>
+
+This will provide tourists and students of architecture-related majors with a very convenient tool for learning architectural styles. In addition, a deployment object such as a mobile phone will also greatly enrich the application scenarios of the model. In the classroom and during field research, it has a relatively strong adaptability to various image sources.
+
+## **Results and Observations**
+
+**Predicting Error Caused by Data Bias**
+
+In the model verification process, to avoid using image data that the model has been exposed to, I changed the image acquisition method. I directly searched the names of famous buildings of various styles on the Flickr website to obtain data that is closer to the real usage scenario from the perspective of tourists. After testing, I found that the model has poor prediction accuracy for images from some special shooting angles.
+
+By comparing the training set data, it can be found that the photos in the Internet search engine are more promotional and introduction photos, which tend to display the architectural shape more completely. Therefore, when testing using pictures from tourists’ first-person perspective, prediction errors often occur.
+
+In the future, if more attention is paid to the construction of different perspectives and the collection of image data from different sources when constructing the data set, it is expected that this situation can be alleviated. Or I may consider simulating different image sources in the data enhancement part.
+
+<div align=center>
+    <img src='./src/pic17.png' width=550>
+</div>
+<br>
+
+**Model Training and Typical Error**
+
+During the testing of the model, it was found that prediction errors occurred more frequently between Byzantine and Gothic buildings. Looking at the pictures, we can see that there are similarities in shape as both have cascading roof structures. It can also be judged from this that the model does not have a good understanding of the dome structure of Byzantine architecture, thus causing a misjudgement with the spire of Gothic architecture.
+
+<div align=center>
+    <img src='./src/pic18.png' width=550>
+</div>
+<br>
+
+Since this project is based on transfer learning of existing models, it may not be effective for extracting architectural features. In the later stage, I may consider increasing the number of layers of model training. On the basis of maintaining the original accuracy benchmark, update more model parameters. 
+
+**Model Deployment**
+
+Since only the model output categories are currently displayed in the application, the degree of utilization of the model is not high, and users do not understand the correspondence between specific architectural features and building categories. Therefore, it is difficult to produce further assistance for the learning of architectural style classification.
+
+In the future, it can be considered to add the typical characteristics of each different building category in addition to the model output prediction results, so that users can conduct comparison and learning after knowing the category. In addition, I may can also consider visualizing the model's understanding of images at the application level, and display computer vision's understanding of architectural style more intuitively.
+
+<div align=center>
+    <img src='./src/pic19.png' width=450>
+</div>
+<br>
+
+## **Bibliography**
+Sun, M. et al. (2022) ‘Understanding architecture age and style through deep learning’, Cities, 128, p. 103787. Available at: https://doi.org/10.1016/j.cities.2022.103787.
+
+## **Declaration of Authorship**
+I, Tianming Liu, confirm that the work presented in this assessment is my own. Where information has been derived from other sources, I confirm that this has been indicated in the work.
+
+Tianming Liu
+25 April 2024
