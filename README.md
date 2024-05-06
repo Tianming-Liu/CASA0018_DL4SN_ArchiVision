@@ -5,6 +5,10 @@
 ## Overview
 This repository contains a deep learning application for the classification of western architectural styles. It is designed to identify and categorize images of buildings into Gothic, Classic, and Byzantine styles. The codebase includes scripts for web image crawling, model training in Colab, and deployment on mobile devices using Flutter.
 
+<div align=center>
+    <img src='./Report/src/pic3.png' width=550>
+</div>
+
 ## Demo Video
 
 Watch the demo video of the project [here](https://www.youtube.com/watch?v=lqC7MKKZYeo).
